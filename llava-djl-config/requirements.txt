@@ -1,0 +1,2 @@
+Pillow
+transformers==4.38.1 
