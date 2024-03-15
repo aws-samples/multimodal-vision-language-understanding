@@ -11,7 +11,7 @@ Comming soon
 
 ## Deploy LLaVA-next-Mistral7B on SageMaker
 
-Comming soon
+In [Llava-v16-Mistral-7B-on-SageMaker](Llava-v16-Mistral-7B-on-SageMaker), we deploy [LLaVA-next-Mistral7B](https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b) on a SageMaker endpoint using DJL and an LMI container image. In our sample, we deploy the pretrained `LLaVA-next-Mistral7B`. You can deploy your own LLaVA model if you train your LLaVA model on your own custom dataset.
 
 ## Use case demo
 
