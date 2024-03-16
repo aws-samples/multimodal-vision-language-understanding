@@ -134,7 +134,7 @@ def parse_qa_response(dataset_text, threshold=4):
     pattern = re.compile(
         r'\d*\.*\s*Question:\s*(.+?)\s*\n*'
         r'\d*\.*\s*Answer:\s*(.+?)\s*\n*'
-        r'\d*\.*\s*Rating:\s*(\d+)\n*',
+        r'\d*\.*\s*Score:\s*(\d+)\n*',
         re.DOTALL
     )
     

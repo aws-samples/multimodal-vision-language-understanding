@@ -1,43 +1,46 @@
 There are QA pairs related to the description of the image.
 Based on the given description of the image, please assess whether the generated answer is aligned with the description of image and meet the requirements.
-Identify any discrepancies or areas where the answer does not match the description, and give rating (1-5) and reason as the output format.
-Set 0 to the rating of the following answer:
-(1) the answer in QA pair with negative word such as "no" and "not"
-(2) the answer in QA pair is not specific to the description of the image, even it's correct generally.
-(3) the answer can't answer the question
+
+Review the generated question-answer pair using the additive 5-point scoring system described below. Points are accumulated based on the satisfaction of each criterion:
+
+- Add 1 point if the question is relevant to the visual content of the image, asking about object types, counting objects, object actions, object locations, relative positions between objects, or other elements that can be directly observed, and the answer provides some information related to the question.
+- Add another point if the answer addresses a substantial portion of the question and is specific to the image, demonstrating accuracy and consistency with the image's content. The answer should only contain information that can be confidently determined from the image.
+- Award a third point if the answer comprehensively addresses the basic elements of the question in a useful way, providing relevant details from the image without including any information that cannot be confidently determined from the image.
+- Grant a fourth point if the question has a definite answer based on the image content, and the answer is clearly tailored to the question, addressing it directly and comprehensively, and is well-organized and helpful, reflecting a deep understanding of the image's content.
+- Bestow a fifth point for a question-answer pair where the question has a definite answer based on the image content, and the answer is impeccably tailored to the question, without extraneous information, demonstrating expert knowledge of the image's content, and providing a high-quality, engaging, and insightful response.
+
+Additional requirements:
+- Set the score to 0 if the answer contains negative words such as "no" or "not," or if the answer is not specific to the description of the image, even if it's generally correct.
+- Set the score to 0 if the answer does not adequately address the question, is inconsistent with the image's content, or includes information that cannot be confidently determined from the image.
+- Set the score to 0 if the question cannot be answered confidently based on the information provided in the image.
+
+An ideal question-answer pair should:
+- Contain information that is included in and specific to the provided photo.
+- Not contain information that is not present in the photo.
+- Have a question that can be answered confidently based on the visual content of the image.
+
 
 ######## Examples of output format ########
 1. Question:
 What color is the bus in the image?
 Answer:
 The bus in the image is white and red.
-Rating:5
+Score:5
 Reason:the QA pair meets the requirements and match the description of the photo
 2. Question:
 How many people do you see boarding the bus?
 Answer:
 Based on the given descriptions, I cannot determine the number of people boarding the bus or if there is anyone boarding at all.
-Rating:0
+Score:0
 Reason:the answer can't answer the question because of lack of information.
 3. Question:
 What is at the front of the bus?
 Answer:
 Although not explicitly stated, it is typical for city buses to have a front door for boarding and an area for displaying route information or advertisements.
 The presence of an advertisement on the back of the bus implies that there is likely a similar display at the front. The bus may also have a front-facing sign or destination board indicating the route and next stop.
-Rating:0
+Score:0
 Reason:the answer is not specific to the description of the image.
 ######## End ##########
-
-##### Requirements ######
-Include questions asking about the visual content of the image, including the object types, counting the objects, object actions, object locations, relative positions between objects, etc. Only include questions that have definite answers:
-(1) one can see the content in the image that the question asks about and can answer confidently;
-(2) one can determine confidently from the image that it is not in the image. Do not ask any question that cannot be answered confidently.
-Also include complex questions that are relevant to the content in the image, for example, asking about background knowledge of the objects in the image, asking to discuss about events happening in the image, etc. Again, do not ask about uncertain details. Provide detailed answers when answering complex questions. For example, give detailed examples or reasoning steps to make the content more convincing and well-organized. You can include multiple paragraphs if necessary.
-
-Ideal answer should:
-(1) be the information included the provided photo
-(2) only have the information specific to the photo
-######## End #########
 
 ##### Description of the image #####
 {image_caption}

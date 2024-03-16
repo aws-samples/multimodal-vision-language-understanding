@@ -1,4 +1,4 @@
-sudo yum install unzip -y
+yum install unzip -y
 conda install -y conda
 conda install -c conda-forge git-lfs -y
 git lfs install
