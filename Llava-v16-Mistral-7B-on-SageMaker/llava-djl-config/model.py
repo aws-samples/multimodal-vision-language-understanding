@@ -10,7 +10,7 @@ import json
 
 from dataclasses import dataclass
 
-from transformers import AutoProcessor, LlavaForConditionalGeneration
+from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
 
 from typing import List, Optional
 from djl_python import Input, Output
@@ -44,9 +44,9 @@ class Llava():
                 raise ValueError('Please make sure the model artifacts are uploaded to s3')
 
             print(f'model path: {model_path}')
-            self.caption_processor = AutoProcessor.from_pretrained(model_path)
+            self.caption_processor = LlavaNextProcessor.from_pretrained(model_path)
             print(self.caption_processor)
-            model = LlavaForConditionalGeneration.from_pretrained(model_path, torch_dtype=self.dtype, device_map=torch.device(self.device), cache_dir="/tmp",)
+            model = LlavaNextForConditionalGeneration.from_pretrained(model_path, torch_dtype=self.dtype, device_map=torch.device(self.device), cache_dir="/tmp",)
             model.eval()
             #model = model.to(self.config.device)
             self.caption_model = model

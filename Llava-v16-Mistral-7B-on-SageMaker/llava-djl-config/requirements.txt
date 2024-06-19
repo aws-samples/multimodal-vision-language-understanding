@@ -1,2 +1,2 @@
 Pillow
-transformers==4.38.1 
+transformers==4.41.0
