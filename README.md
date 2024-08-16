@@ -11,6 +11,17 @@ Comming soon
 
 ## Deploy LLaVA-next-Mistral7B on SageMaker
 
+**Update on Large Model Inference 0.29**  
+- [vLLM Engine User Guide](https://docs.djl.ai/master/docs/serving/serving/docs/lmi/user_guides/vllm_user_guide.html#vllm-engine-user-guide) 
+- [Chat Completions API Schema](https://docs.djl.ai/master/docs/serving/serving/docs/lmi/user_guides/chat_input_output_schema.html)
+
+Multi Modal Models native support for 
+
+- LlaVA-NeXT (llava-hf/llava-v1.6-mistral-7b-hf, llava-hf/llava-v1.6-vicuna-7b-hf, etc.)
+- Phi-3-Vision (microsoft/Phi-3-vision-128k-instruct, etc.)
+
+
+
 In [Llava-v16-Mistral-7B-on-SageMaker](Llava-v16-Mistral-7B-on-SageMaker), we deploy [LLaVA-next-Mistral7B](https://huggingface.co/liuhaotian/llava-v1.6-mistral-7b) on a SageMaker endpoint using DJL and an LMI container image. In our sample, we deploy the pretrained `LLaVA-next-Mistral7B`. You can deploy your own LLaVA model if you train your LLaVA model on your own custom dataset.
 
 ## Use case demo
